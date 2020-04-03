@@ -1,0 +1,20 @@
+{
+  "name": "goit-js-hw-11-color-switch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Romashka093/goit-js-hw-11-color-switch.git"
+  },
+  "author": "Anna Romashchenko <aa.romashchenko@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Romashka093/goit-js-hw-11-color-switch/issues"
+  },
+  "homepage": "https://github.com/Romashka093/goit-js-hw-11-color-switch#readme"
+}
