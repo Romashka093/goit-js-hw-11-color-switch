@@ -2,14 +2,19 @@
   margin: 20px auto;
   display: flex;
   justify-content: center;
+  height: 30vh;
 }
 
 .button {
+  font-size: large;
   padding: 5px;
   margin: 10px;
+  width: 100px;
   border-radius: 5px;
   border: 1px solid #414141;
-  color: #414141;
+  color: #000000;
   outline: none;
   cursor: pointer;
+  background-color: #bebebe;
+  box-shadow: 0 1px 1px #0000001c, 0 2px 2px #0000001c, 0 4px 4px #0000001c, 0 8px 8px #0000001c, 0 16px 16px #0000001c, 0 32px 32px #0000001c;
 }

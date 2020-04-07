@@ -9,20 +9,26 @@ const colors = [
     '#795548',
 ];
 
-console.log(colors);
-
 const refs = {
     start: document.querySelector("button[data-action='start']"),
     stop: document.querySelector("button[data-action='stop']"),
     body: document.querySelector('body')
 }
 
-console.log(refs);
-
+let colorId;
 refs.start.addEventListener('click', handleChange);
 
 function handleChange(e) {
     if (e.target) {
-        refs.body.style.background = colors[3]
+        colorId = setInterval(function () {
+            console.log(refs.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+            )
+        }, 1000)
     }
+}
+
+refs.stop.addEventListener('click', handleStop);
+
+function handleStop() {
+    clearInterval(colorId)
 }
