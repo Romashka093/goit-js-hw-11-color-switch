@@ -1,5 +1,11 @@
 import './styles.css';
 
+const refs = {
+    start: document.querySelector("button[data-action='start']"),
+    stop: document.querySelector("button[data-action='stop']"),
+    body: document.querySelector('body')
+}
+
 const colors = [
     '#FFFFFF',
     '#2196F3',
@@ -9,26 +15,34 @@ const colors = [
     '#795548',
 ];
 
-const refs = {
-    start: document.querySelector("button[data-action='start']"),
-    stop: document.querySelector("button[data-action='stop']"),
-    body: document.querySelector('body')
-}
+const randomIntegerFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
-let colorId;
-refs.start.addEventListener('click', handleChange);
-
-function handleChange(e) {
-    if (e.target) {
-        colorId = setInterval(function () {
-            console.log(refs.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
-            )
-        }, 1000)
-    }
-}
-
+let intervalId;
+refs.start.addEventListener('click', handleChangeColor);
 refs.stop.addEventListener('click', handleStop);
 
-function handleStop() {
-    clearInterval(colorId)
-}
+
+function handleChangeColor(e) {
+    if (e.target) {
+        e.target.disabled = true
+        intervalId = setInterval(function () {
+            // // my option
+            // console.log(refs.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]);
+
+            // option from technical task
+            const color = colors[randomIntegerFromInterval(0, colors.length)];
+            console.log(refs.body.style.backgroundColor = color);
+        }, 1000)
+    }
+};
+
+function handleStop(e) {
+    if (e.target) {
+        clearInterval(intervalId);
+        refs.start.disabled = false;
+        refs.body.style.backgroundColor = '';
+    }
+
+};
